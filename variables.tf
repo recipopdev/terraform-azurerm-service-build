@@ -8,6 +8,11 @@ variable "resource_group" {
   type        = string
 }
 
+variable "location" {
+  description = "The location that the image will be created in"
+  type        = string
+}
+
 variable "tag" {
   description = "The tag to attach to the service being built"
   type        = string
