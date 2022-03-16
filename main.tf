@@ -17,9 +17,9 @@ resource "docker_registry_image" "main" {
     memory     = var.memory
 
     auth_config {
-      user_name      = azurerm_container_registry.main.admin_username
-      password       = azurerm_container_registry.main.admin_password
-      server_address = azurerm_container_registry.main.login_server
+      user_name = azurerm_container_registry.main.admin_username
+      password  = azurerm_container_registry.main.admin_password
+      host_name = azurerm_container_registry.main.login_server
     }
   }
 }
