@@ -1,5 +1,5 @@
 resource "docker_registry_image" "main" {
-  name = "${azurerm_container_registry.main.login_server}/${var.service}:${var.tag}"
+  name = "${var.server}/${var.service}:${var.tag}"
 
   build {
     context    = "${var.build.path}/"
