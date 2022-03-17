@@ -3,6 +3,11 @@ variable "service" {
   type        = string
 }
 
+variable "server" {
+  description = "The name of the server to push the image to"
+  type        = string
+}
+
 variable "tag" {
   description = "The tag to attach to the service being built"
   type        = string
