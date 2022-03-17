@@ -6,6 +6,13 @@ resource "azurerm_container_registry" "main" {
   admin_enabled       = true
 }
 
+resource "null_resource" "authenticate" {
+  provisioner "local-exec" {
+    command = "az acr login --name ${var.service}"
+  }
+  depends_on = [azurerm_container_registry.main]
+}
+
 resource "docker_registry_image" "main" {
   name = "${azurerm_container_registry.main.login_server}:${var.tag}"
 
